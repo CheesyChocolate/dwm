@@ -1,6 +1,6 @@
 _pkgname=dwm
-pkgname=$_pkgname-lemon_version
-pkgver=6.2.r1888.0ac09e0
+pkgname=$_pkgname-lemon-git
+pkgver=6.4.r1928.028a438
 pkgrel=1
 pkgdesc="Suren's build of dwm"
 url=https://github.com/CheesyChocolate/dwm.git
@@ -13,7 +13,7 @@ optdepends=(
 	'st: terminal emulator')
 provides=($_pkgname)
 conflicts=($_pkgname)
-source=(git@github.com:CheesyChocolate/dwm.git)
+source=("$_pkgname::git+$url")
 sha256sums=('SKIP')
 
 pkgver() {

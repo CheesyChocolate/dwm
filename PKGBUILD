@@ -1,9 +1,9 @@
 _pkgname=dwm
-pkgname=$_pkgname-larbs-git
+pkgname=$_pkgname-lemon_version
 pkgver=6.2.r1888.0ac09e0
 pkgrel=1
-pkgdesc="Luke's build of dwm"
-url=https://github.com/LukeSmithxyz/dwm
+pkgdesc="Suren's build of dwm"
+url=https://github.com/CheesyChocolate/dwm.git
 arch=(i686 x86_64)
 license=(MIT)
 makedepends=(git)
@@ -13,7 +13,7 @@ optdepends=(
 	'st: terminal emulator')
 provides=($_pkgname)
 conflicts=($_pkgname)
-source=(git+https://github.com/LukeSmithxyz/dwm)
+source=(git@github.com:CheesyChocolate/dwm.git)
 sha256sums=('SKIP')
 
 pkgver() {

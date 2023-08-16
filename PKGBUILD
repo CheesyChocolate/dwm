@@ -1,3 +1,4 @@
+# Maintainer: Suren (CheesyChocolate) <dev [at] behnamlal [dot] xyz>
 _pkgname=dwm
 pkgname=$_pkgname-lemon-git
 pkgver=6.4.r1928.028a438

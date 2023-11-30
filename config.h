@@ -58,6 +58,7 @@ static const Rule rules[] = {
 	{ TERMCLASS,	"bg",		NULL,		1 << 7,		0,		1,		0,		-1 },
 	{ TERMCLASS,	"spterm",	NULL,		SPTAG(0),	1,		1,		0,		-1 },
 	{ TERMCLASS,	"spcalc",	NULL,		SPTAG(1),	1,		1,		0,		-1 },
+	{ "ripdrag",	NULL,		NULL,		0,		1,		0,		0,		-1 },
 };
 
 /* layout(s) */

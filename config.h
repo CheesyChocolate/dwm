@@ -240,7 +240,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
 	{ MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/bookmark/urls | dmenu -i -l 50 | cut -d' ' -f1)") },
 
-	{ MODKEY,			XK_F1,		spawn,		{.v = (const char*[]){ "xinput-toggle", "-r", "SynPS/2 Synaptics TouchPad", NULL } } },
+	{ MODKEY,			XK_F1,		spawn,		{.v = (const char*[]){ "xinput-toggle", "-r", "ASUP1200:00 093A:200A Touchpad", NULL } } },
 	{ MODKEY,			XK_F2,		spawn,		SHCMD("kl-toggle") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("xset dpms force off; mpc pause; pauseallmpv") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
@@ -285,9 +285,9 @@ static const Key keys[] = {
 	{ 0, XF86XK_MyComputer,		spawn,		{.v = (const char*[]){ TERMINAL, "-e",  "lfub",  "/", NULL } } },
 	/* { 0, XF86XK_Battery,		spawn,		SHCMD("") }, */
 	{ 0, XF86XK_Launch1,		spawn,		{.v = (const char*[]){ "xset", "dpms", "force", "off", NULL } } },
-	{ 0, XF86XK_TouchpadToggle,	spawn,		{.v = (const char*[]){ "xinput-toggle", "-r", "SynPS/2 Synaptics TouchPad", NULL } } },
-	{ 0, XF86XK_TouchpadOff,	spawn,		{.v = (const char*[]){ "xinput", "disable", "SynPS/2 Synaptics TouchPad", NULL } } },
-	{ 0, XF86XK_TouchpadOn,		spawn,		{.v = (const char*[]){ "xinput", "enable", "SynPS/2 Synaptics TouchPad", NULL } } },
+	{ 0, XF86XK_TouchpadToggle,	spawn,		{.v = (const char*[]){ "xinput-toggle", "-r", "ASUP1200:00 093A:200A Touchpad", NULL } } },
+	{ 0, XF86XK_TouchpadOff,	spawn,		{.v = (const char*[]){ "xinput", "disable", "ASUP1200:00 093A:200A Touchpad", NULL } } },
+	{ 0, XF86XK_TouchpadOn,		spawn,		{.v = (const char*[]){ "xinput", "enable", "ASUP1200:00 093A:200A Touchpad", NULL } } },
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "xbacklight", "-inc", "10", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "xbacklight", "-dec", "10", NULL } } },
 

@@ -42,7 +42,10 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+/* static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" }; */
+/* static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }; */
+static const char *tags[] = { "𐏑", "𐏒", "𐏒𐏑", "𐏒𐏒", "𐏒𐏒𐏑", "𐏒𐏒𐏒", "𐏒𐏒𐏒𐏑", "𐏒𐏒𐏒𐏒", "𐏒𐏒𐏒𐏒𐏑" };
 
 static const Rule rules[] = {
 	/* xprop(1):

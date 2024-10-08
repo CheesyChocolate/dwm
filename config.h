@@ -196,7 +196,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
-	{ MODKEY|ShiftMask,		XK_s,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
+	{ MODKEY|ShiftMask,		XK_s,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,			XK_d,		spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu-otp", NULL } } },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },

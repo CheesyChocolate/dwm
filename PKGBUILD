@@ -1,7 +1,7 @@
 # Maintainer: Suren (CheesyChocolate) <dev [at] behnamlal [dot] xyz>
 _pkgname=dwm
 pkgname=$_pkgname-lemon-git
-pkgver=6.4.r1928.028a438
+pkgver=6.5.r1949.1d3fefb
 pkgrel=1
 pkgdesc="Suren's build of dwm"
 url=https://github.com/CheesyChocolate/dwm.git

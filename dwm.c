@@ -106,7 +106,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh, hintsvalid;
 	int bw, oldbw;
 	unsigned int tags;
-	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow, issticky;
+	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow, issticky, isstickybg;
 	pid_t pid;
 	Client *next;
 	Client *snext;
@@ -261,6 +261,7 @@ static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglescratch(const Arg *arg);
 static void togglesticky(const Arg *arg);
+static void togglestickybg(const Arg *arg);
 static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
@@ -1622,7 +1623,7 @@ restack(Monitor *m)
 	drawbar(m);
 	if (!m->sel)
 		return;
-	if (m->sel->isfloating || !m->lt[m->sellt]->arrange)
+	if (!m->sel->isstickybg && (m->sel->isfloating || !m->lt[m->sellt]->arrange))
 		XRaiseWindow(dpy, m->sel->win);
 	if (m->lt[m->sellt]->arrange) {
 		wc.stack_mode = Below;
@@ -1633,6 +1634,9 @@ restack(Monitor *m)
 				wc.sibling = c->win;
 			}
 	}
+	for (c = m->stack; c; c = c->snext)
+		if (c->isstickybg)
+			XLowerWindow(dpy, c->win);
 	XSync(dpy, False);
 	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 }
@@ -2054,6 +2058,18 @@ togglesticky(const Arg *arg)
 	if (!selmon->sel)
 		return;
 	selmon->sel->issticky = !selmon->sel->issticky;
+	arrange(selmon);
+}
+
+void
+togglestickybg(const Arg *arg)
+{
+	if (!selmon->sel)
+		return;
+	selmon->sel->isstickybg = !selmon->sel->isstickybg;
+	selmon->sel->issticky = selmon->sel->isstickybg;
+	if (selmon->sel->isstickybg)
+		XLowerWindow(dpy, selmon->sel->win);
 	arrange(selmon);
 }
 
